@@ -20,7 +20,7 @@ class OrdersRepositoryTest {
 
     @Test
     void selectAll() {
-        List<Orders> ordersList = ordersRepository.findAll();
+        List<OrdersResponse> ordersList = ordersRepository.findAllOrdersBy();
 
         assertThat(ordersList.size()).isEqualTo(5);
 
@@ -30,7 +30,7 @@ class OrdersRepositoryTest {
 
     @Test
     void selectAllByUserNo() {
-        List<OrdersResponse> ordersList = ordersRepository.findOrderByUserNo(1L);
+        List<OrdersResponse> ordersList = ordersRepository.findOrderByUserId(1L);
 
         assertThat(ordersList.size()).isEqualTo(3);
         ordersList.stream().forEach(System.out::println);

@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
 public class Orders {
 
     @Id
-    @Column(name = "no")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long no;
+    private Long id;
 
     @Column(name = "order_no", nullable = false)
     private String orderNo;
@@ -26,7 +26,7 @@ public class Orders {
     private LocalDateTime orderDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_no", foreignKey = @ForeignKey(name = "fk_order_to_user"))
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_order_to_user"))
     private Users user;
 
     protected Orders() {

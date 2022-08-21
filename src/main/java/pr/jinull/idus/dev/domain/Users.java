@@ -3,6 +3,7 @@ package pr.jinull.idus.dev.domain;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import pr.jinull.idus.dev.dto.UsersResponse;
 
 import javax.persistence.*;
 
@@ -12,9 +13,9 @@ import javax.persistence.*;
 @ToString
 public class Users {
     @Id
-    @Column(name = "no")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long no;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -34,8 +35,8 @@ public class Users {
     @Column(name = "gender")
     private String gender;
 
-    public Users(Long no, String name, String nickname, String password, String telNum, String email, String gender) {
-        this.no = no;
+    public Users(Long id, String name, String nickname, String password, String telNum, String email, String gender) {
+        this.id = id;
         this.name = name;
         this.nickname = nickname;
         this.password = password;
@@ -44,8 +45,20 @@ public class Users {
         this.gender = gender;
     }
 
+    public Users(String name, String nickname, String password, String telNum, String email, String gender) {
+        this.name = name;
+        this.nickname = nickname;
+        this.password = password;
+        this.telNum = telNum;
+        this.email = email;
+        this.gender = gender;
+    }
 
     protected Users() {
 
+    }
+
+    public UsersResponse makeDto() {
+        return new UsersResponse(id, name, nickname, telNum, email, gender);
     }
 }

@@ -35,4 +35,11 @@ class UsersRepositoryTest {
 
         users.stream().forEach(System.out::println);
     }
+
+    @Test
+    void selectAll() {
+        List<UsersResponse> usersResponses = usersRepository.findAllUsersBy();
+
+        usersResponses.stream().forEach(System.out::println);
+    }
 }

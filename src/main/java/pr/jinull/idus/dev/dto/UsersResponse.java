@@ -10,13 +10,11 @@ import lombok.ToString;
 @ToString
 @Setter
 public class UsersResponse {
-    private Long no;
+    private Long id;
 
     private String name;
 
     private String nickname;
-
-    private String password;
 
     private String telNum;
 
