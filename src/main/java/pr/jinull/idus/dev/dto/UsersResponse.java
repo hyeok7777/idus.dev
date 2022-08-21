@@ -1,12 +1,9 @@
-package idus.jinull.idus.dev.dto;
+package pr.jinull.idus.dev.dto;
 
-import idus.jinull.idus.dev.domain.Orders;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.util.List;
 
 @Getter
 @AllArgsConstructor

@@ -1,4 +1,4 @@
-package idus.jinull.idus.dev;
+package pr.jinull.idus.dev;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

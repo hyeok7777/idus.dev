@@ -1,7 +1,7 @@
-package idus.jinull.idus.dev.repository;
+package pr.jinull.idus.dev.repository;
 
-import idus.jinull.idus.dev.domain.Orders;
-import idus.jinull.idus.dev.dto.OrdersResponse;
+import pr.jinull.idus.dev.domain.Orders;
+import pr.jinull.idus.dev.dto.OrdersResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
@@ -22,15 +22,17 @@ class OrdersRepositoryTest {
     void selectAll() {
         List<Orders> ordersList = ordersRepository.findAll();
 
-        ordersList.stream().forEach(System.out::println);
+        assertThat(ordersList.size()).isEqualTo(5);
 
+
+        ordersList.stream().forEach(System.out::println);
     }
 
     @Test
     void selectAllByUserNo() {
-        List<OrdersResponse> ordersList = ordersRepository.findOrdersByUserNo(1L);
+        List<OrdersResponse> ordersList = ordersRepository.findOrderByUserNo(1L);
 
+        assertThat(ordersList.size()).isEqualTo(3);
         ordersList.stream().forEach(System.out::println);
-
     }
 }

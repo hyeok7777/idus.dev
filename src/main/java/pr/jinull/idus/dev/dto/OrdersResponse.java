@@ -1,11 +1,11 @@
-package idus.jinull.idus.dev.dto;
+package pr.jinull.idus.dev.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import pr.jinull.idus.dev.domain.Users;
 
-import javax.persistence.Column;
 import java.time.LocalDateTime;
 
 @ToString
@@ -16,11 +16,11 @@ public class OrdersResponse {
 
     private Long no;
 
-    private Long userNo;
-
     private String orderNo;
 
     private String productName;
 
     private LocalDateTime orderDate;
+
+    private Users user;
 }

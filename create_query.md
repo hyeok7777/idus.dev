@@ -1,7 +1,7 @@
 ## 회원 속성 
 
 ```mysql
-create table users (
+create table user (
 	seq bigint not null auto_INCREMENT, 
 	name varchar(20) not null,
 	nickname varchar(30) not null, 
@@ -22,7 +22,7 @@ constraint unq_user_email unique (email)
 ## 주문 속성
 
 ```mysql
-create table orders (
+create table order (
 	no bigint not null auto_increment,
 	user_no bigint not null,
 	order_no varchar(12) not null,

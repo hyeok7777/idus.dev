@@ -1,4 +1,4 @@
-package idus.jinull.idus.dev.domain;
+package pr.jinull.idus.dev.domain;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -16,9 +16,6 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no;
 
-    @Column(name = "user_no", nullable = false)
-    private Long userNo;
-
     @Column(name = "order_no", nullable = false)
     private String orderNo;
 
@@ -27,6 +24,10 @@ public class Orders {
 
     @Column(name = "order_date", nullable = false)
     private LocalDateTime orderDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_no", foreignKey = @ForeignKey(name = "fk_order_to_user"))
+    private Users user;
 
     protected Orders() {
 

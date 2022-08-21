@@ -1,11 +1,10 @@
-package idus.jinull.idus.dev.domain;
+package pr.jinull.idus.dev.domain;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
@@ -34,11 +33,6 @@ public class Users {
 
     @Column(name = "gender")
     private String gender;
-
-    @OneToMany
-    @JoinColumn(name = "no")
-    private List<Orders> ordersList;
-
 
     public Users(Long no, String name, String nickname, String password, String telNum, String email, String gender) {
         this.no = no;
