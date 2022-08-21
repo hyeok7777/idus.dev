@@ -1,6 +1,5 @@
 package idus.jinull.idus.dev.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,7 +27,7 @@ public class Users {
     private String password;
 
     @Column(name = "tel_num", nullable = false)
-    private String tel_num;
+    private String telNum;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -41,12 +40,12 @@ public class Users {
     private List<Orders> ordersList;
 
 
-    public Users(Long no, String name, String nickname, String password, String tel_num, String email, String gender) {
+    public Users(Long no, String name, String nickname, String password, String telNum, String email, String gender) {
         this.no = no;
         this.name = name;
         this.nickname = nickname;
         this.password = password;
-        this.tel_num = tel_num;
+        this.telNum = telNum;
         this.email = email;
         this.gender = gender;
     }

@@ -17,16 +17,16 @@ public class Orders {
     private Long no;
 
     @Column(name = "user_no", nullable = false)
-    private Long user_no;
+    private Long userNo;
 
     @Column(name = "order_no", nullable = false)
-    private String order_no;
+    private String orderNo;
 
     @Column(name = "product_name", nullable = false)
-    private String product_name;
+    private String productName;
 
     @Column(name = "order_date", nullable = false)
-    private LocalDateTime order_date;
+    private LocalDateTime orderDate;
 
     protected Orders() {
 

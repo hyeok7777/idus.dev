@@ -1,7 +1,7 @@
 package idus.jinull.idus.dev.repository;
 
 import idus.jinull.idus.dev.domain.Users;
-import org.apache.catalina.User;
+import idus.jinull.idus.dev.dto.UsersResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,14 +11,11 @@ import java.util.Optional;
 
 public interface UsersRepository extends JpaRepository<Users, Long> {
 
-    @Query("select distinct u from Users u join fetch u.ordersList")
-    List<Users> findAllJoinFetch();
+    @Query("select distinct u from Users u join fetch u.ordersList where u.no = :no")
+    List<Users> findAllJoinFetch(@Param("no") Long no);
 
-    @Query("select u.no, u.name, u.nickname, u.tel_num, u.email, u.gender from Users u " +
-            " where u.name = :name ")
-    Optional<Users> findByUserName(@Param("name") String name);
 
-    @Query("select u.no, u.name, u.nickname, u.tel_num, u.email, u.gender from Users u " +
-            " where u.email = :email ")
-    Optional<Users> findByUserEmail(@Param("email") String email);
+    Optional<UsersResponse> findUsersByEmail(@Param("email") String email);
+
+    List<UsersResponse> findUsersByName(@Param("name") String name);
 }

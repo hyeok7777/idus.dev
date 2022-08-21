@@ -1,6 +1,7 @@
 package idus.jinull.idus.dev.repository;
 
 import idus.jinull.idus.dev.domain.Users;
+import idus.jinull.idus.dev.dto.UsersResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,9 +25,15 @@ class UsersRepositoryTest {
     }
 
     @Test
-    void selectAllByUser() {
-        Optional<Users> users = usersRepository.findByUserName("오진혁");
+    void selectAllByUsersByEmail() {
+        Optional<UsersResponse> users = usersRepository.findUsersByEmail("hyeok7777@gmail.com");
 
+        System.out.println(users.toString());
+    }
+
+    @Test
+    void selectAllUsersByName() {
+        List<UsersResponse> users = usersRepository.findUsersByName("오진혁");
         System.out.println(users.toString());
     }
 }

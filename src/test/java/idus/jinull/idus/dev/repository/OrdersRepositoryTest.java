@@ -1,6 +1,7 @@
 package idus.jinull.idus.dev.repository;
 
 import idus.jinull.idus.dev.domain.Orders;
+import idus.jinull.idus.dev.dto.OrdersResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,8 +27,8 @@ class OrdersRepositoryTest {
     }
 
     @Test
-    void selectAllByUser() {
-        List<Orders> ordersList = ordersRepository.findAll();
+    void selectAllByUserNo() {
+        List<OrdersResponse> ordersList = ordersRepository.findOrdersByUserNo(1L);
 
         ordersList.stream().forEach(System.out::println);
 
