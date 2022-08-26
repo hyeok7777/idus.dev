@@ -10,8 +10,13 @@
 
 
         <div class="jumbotron">
-            <H1>로그인</H1>
+            <H1>회원</H1>
             <p>
+                <form action="/login" method="post" id="loginForm">
+                    이메일<input name="email" type="text" id="email" class="form-control">
+                    비밀번호<input name="password" type="password" id="password" class="form-control">
+                    <button type="submit">로그인</button>
+                </form>
                 <a class="btn btn-lg btn-secondary" href="/users/new">회원 가입</a>
                 <a class="btn btn-lg btn-secondary" href="/users">회원 목록</a>
 

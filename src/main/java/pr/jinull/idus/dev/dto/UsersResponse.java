@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.validation.constraints.NotEmpty;
+
 @Getter
 @AllArgsConstructor
 @ToString
@@ -21,6 +23,5 @@ public class UsersResponse {
     private String email;
 
     private String gender;
-
 
 }
